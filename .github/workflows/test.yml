@@ -25,7 +25,10 @@ jobs:
 
       - name: Instala bibliotecas específicas
         run: |
-          npm install
+          cd "GXSteel Back-end"
+          npm install express mongoose bcrypt jsonwebtoken cookie-parser cors dotenv
 
       - name: Executa testes
-        run: npm test
+        run: |
+          cd "GXSteel Back-end"
+          npm test
