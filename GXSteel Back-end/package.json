@@ -4,7 +4,8 @@
   "description": "Back-end do GXSteel",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "echo \"Sem testes"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
