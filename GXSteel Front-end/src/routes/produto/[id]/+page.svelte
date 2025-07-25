@@ -20,7 +20,7 @@
 	}
 
     onMount(async () => {
-        const res = await fetch('http://localhost:3000/api/product/' + id);
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/product/${id}`);
         const data = await res.json();
         produto = data;
         mainImage = Array.isArray(data.image) ? data.image[0] : '';
