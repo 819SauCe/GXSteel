@@ -1,0 +1,180 @@
+@import url(all.css);
+
+.contact-button-and-img {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+.container-experiencia {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem 1rem;
+  width: 20rem;
+  font-size: 28px;
+  background-color: var(--background-orange);
+  color: white;
+  display: flex;
+  gap: 0.5rem;
+}
+.njkads {
+  position: absolute;
+  bottom: -20%;
+  left: -20%;
+  border: 20px solid var(--background-color);
+}
+.cotacao-btn {
+  width: 9rem;
+  height: 4rem;
+  color: white;
+  background-color: var(--button-background);
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-right: 12rem;
+  margin-top: 1.5rem;
+}
+.botao-carrossel {
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  background-color: var(--button-background);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.botao-carrossel span {
+  width: 1rem;
+  height: 1rem;
+  font-weight: 1200;
+}
+.carrossel-viewport {
+  overflow-x: hidden;
+  width: 1020px;
+}
+.carrossel-container {
+  display: flex;
+  gap: 10px;
+  width: fit-content;
+}
+.carrossel-item {
+  min-width: 250px;
+  flex-shrink: 0;
+}
+.container-contrate {
+  position: relative;
+  display: flex;
+  margin-left: 12rem;
+  width: 75%;
+  height: 7rem;
+  background-color: #fff;
+  border-radius: 15px;
+}
+.container-contrate img {
+  position: absolute;
+  bottom: -0.3rem;
+  left: 40px;
+}
+.container-contrate h4 {
+  font-size: 22px;
+  margin-top: 2.5rem;
+  margin-left: 15rem;
+  font-weight: bold;
+}
+.contrate-button {
+  width: 9rem;
+  height: 4rem;
+  position: absolute;
+  right: 1rem;
+  top: 1.5rem;
+}
+.equipe {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.btn-prox-ant {
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  right: 12rem;
+  margin-top: 3rem;
+}
+.img-background-class {
+  height: 20rem;
+}
+.dados {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  gap: 5rem;
+  text-align: center;
+  margin-left: 50%;
+  transform: translate(-50%);
+  width: 100%;
+}
+
+.veja-mais {
+  width: 7rem;
+  height: 3rem;
+  margin-left: 50%;
+  transform: translate(-50%);
+  margin-top: 3rem;
+}
+
+.img-direita {
+  position: relative;
+}
+.img-esquerda {
+  position: relative;
+}
+
+.img-esquerda img {
+  position: absolute;
+  width: 50%;
+  height: auto;
+  left: 0px;
+}
+
+.img-direita img {
+  position: absolute;
+  width: 50%;
+  height: auto;
+  right: 0px;
+}
+
+.img-direita h2 {
+  position: absolute;
+  z-index: 10;
+  right: 35rem;
+  margin-top: 3rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.img-esquerda h2 {
+  position: absolute;
+  z-index: 10;
+  margin-left: 1rem;
+  margin-top: 3rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.apresentacao-blog {
+  margin-top: 31rem;
+}
+
+.fkdaj {
+  color: var(--hover-a);
+}
+
+.dargbjh, .fkdaj {
+  margin-left: 7.5rem;
+}
+
+.blog-container {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
