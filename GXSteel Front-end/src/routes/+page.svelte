@@ -3,8 +3,8 @@
   import { tick } from "svelte";
   import ProdutoContainer from '../components/Produto_container.svelte';
   import "../style/principal_page.css";
-    import BlogContainer from "../components/Blog_container.svelte";
-    import WppUp from "../components/Wpp-up.svelte";
+  import BlogContainer from "../components/Blog_container.svelte";
+  import WppUp from "../components/Wpp-up.svelte";
   
 
   let itemContainer;
@@ -188,6 +188,7 @@
     </div>
 </main>
 
+{#if produtos.length > 0}
 <main>
     <div id="title-main">
         <p>Nossos produtos</p>
@@ -203,6 +204,7 @@
         <button class="veja-mais" on:click={redirectToCatalog} id="padrao_button">Veja mais</button>
     {/if}
 </main>
+{/if}
 
 <main class="background-imgs-siga">
     <div class="img-esquerda">
