@@ -1,31 +1,62 @@
-# GXSteel — Backend API
+# GXSteel — Webstore Demo
 
-API RESTful com autenticação, cadastro de usuários e gerenciamento de produtos.
+Este é um projeto demonstrativo baseado na estrutura do sistema comercial da empresa onde atuo como desenvolvedor da empresa global-trade. Todo o código e conteúdo aqui presente são públicos, sem dados sensíveis ou internos.
 
-🔗 **Documentação completa:**  
-👉 [https://docummentation-gxsteel.vercel.app](https://docummentation-gxsteel.vercel.app)
+## 🧱 Tecnologias Utilizadas
+
+- 📦 **Backend:** Node.js + Express + MongoDB  
+- 🎨 **Frontend:** sveltekit + Bootstrap, licenciado.
+- 🚀 **Deploy:** Vercel (versão demo)
 
 ---
 
-## 🛠️ Tecnologias
-- Node.js + Express
-- MongoDB (Mongoose)
-- JWT (autenticação)
-- Bcrypt (hash de senhas)
-- Cookie-parser
-- CORS
+## 🌐 Demonstração
 
-## 📦 Funcionalidades
-- Registro, login e logout de usuários
-- Inserção e listagem de produtos
-- Atualização de produtos por ID
-- Middleware de autenticação JWT
-- Paginação e filtro por `isActive`
+- 🧪 [Versão pública de demonstração (Vercel)](https://docummentation-gxsteel.vercel.app)
+- 🛒 [Loja oficial em produção]([https://gxsteel.com.br)]
 
-## ⚙️ Rodando localmente
+---
+
+## ⚙️ Funcionalidades
+
+- Autenticação com JWT
+- Cadastro e login de usuários
+- Inserção, listagem e edição de produtos
+- Middleware para proteção de rotas
+- Paginação e filtros
+- Backend documentado com Swagger
+
+---
+
+## 📁 Organização do Repositório
+
+GXSteel/
+├── GXSteel Back-end/ # API Node.js (Express, MongoDB)
+├── documentation/ # Documentação Swagger (deployado na Vercel)
+└── .github/workflows/ # Testes automatizados via GitHub Actions
+
+
+---
+
+## 🛠️ Executar Localmente
 
 ```bash
-git clone https://github.com/819SauCe/GXSteel.git
-cd GXSteel
+cd "GXSteel Back-end"
 npm install
-npm run dev
+npm start
+```
+
+Crie um arquivo .env com as seguintes variáveis:
+```bash
+PORT=3000
+JWT_SECRET=sua_chave_secreta
+MONGODB_URI=sua_uri
+CORS_ORIGIN=http://localhost:3000
+```
+
+## 📄 Licença
+
+Este projeto é demonstrativo e não contém dados sensíveis.
+O template visual da interface é licenciado.
+Todos os dados exibidos são mockados para fins de simulação.
+
