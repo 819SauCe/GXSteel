@@ -2,12 +2,11 @@
     import { onMount } from 'svelte';
     import { page } from '$app/stores';
 
-    
     let produto = [];
     let reviews = [];
-	let mainImage = '';
-	let thumbnails = [];
-	let quantity = 1;
+    let mainImage = '';
+    let thumbnails = [];
+    let quantity = 1;
     let q_ratings = 0;
     let ratings = {};
     let stars = 0;
@@ -15,9 +14,13 @@
     let comment = '';
     $: id = $page.params.id
 
-	function changeImage(src) {
-		mainImage = src;
-	}
+    function changeImage(src) {
+      mainImage = src;
+    }
+
+    function directToWpp() {
+        window.open(`https://api.whatsapp.com/send?phone=+551640424000&text=Olá, gostaria de saber mais sobre o produto: ${produto.name}`, '_blank');
+    }
 
     onMount(async () => {
         const res = await fetch(`${import.meta.env.VITE_API_URL}/api/product/${id}`);
@@ -73,8 +76,9 @@
 					style="width: 80px"
 				/>
 			</div>
-			<button class="btn btn-primary btn-lg mb-3 me-2">
-				<i class="bi bi-cart-plus"></i> Add to Cart
+			<button on:click={directToWpp} class="btn btn-primary btn-lg mb-3 me-2">
+        <!--<i class="bi bi-cart-plus"></i>-->
+				 Peça agora!
 			</button>
 			<button class="btn btn-outline-secondary btn-lg mb-3">
 				<i class="bi bi-heart"></i> Add to Wishlist

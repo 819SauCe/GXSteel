@@ -32,6 +32,7 @@ usersSchema = new mongoose.Schema({
     phone: String,
     address: String,
     role: String,
+    liked: [String],
     createdAt: { type: Date, default: Date.now },
 });
 
@@ -247,6 +248,53 @@ app.get('/api/catch_all_products', async (req, res) => {
     } catch (e) {
         res.status(400).send(e);
     }
+});
+
+app.put('/api/like_product/:id', authMiddleware, async (req, res) => {
+  try {
+    const productId = req.params.id;
+    const userId = req.user.id;
+    const product = await Product.findById(productId);
+    if (!product) return res.status(404).send({ error: "Produto não encontrado" });
+    const user = await User.findById(userId);
+    if (!user) return res.status(404).send({ error: "Usuário não encontrado" });
+    if (user.liked.includes(productId)) {return res.status(400).send({ error: "Produto já está nos favoritos" });}
+    user.liked.push(productId);
+    await user.save();
+    product.likes = (product.likes || 0) + 1;
+    await product.save();
+    res.status(200).send({ message: "Produto favoritado com sucesso", liked: user.liked });
+  } catch (e) {
+    res.status(400).send({ error: e.message });
+  }
+});
+
+app.put('/api/unlike_product/:id', authMiddleware, async (req, res) => {
+  try {
+    const productId = req.params.id;
+    const userId = req.user.id;
+    const user = await User.findById(userId);
+    if (!user) return res.status(404).send({ error: "Usuário não encontrado" });
+    const index = user.liked.indexOf(productId);
+    if (index === -1) return res.status(400).send({ error: "Produto não está nos favoritos" });
+    user.liked.splice(index, 1);
+    await user.save();
+    const product = await Product.findById(productId);
+    if (product && product.likes > 0) {product.likes -= 1;await product.save();}
+    res.status(200).send({ message: "Produto removido dos favoritos", liked: user.liked });
+  } catch (e) {
+    res.status(400).send({ error: e.message });
+  }
+});
+
+app.get('/api/favorites', authMiddleware, async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id);
+    const products = await Product.find({ _id: { $in: user.liked } }).select('_id name image price old_price description');
+    res.status(200).send(products);
+  } catch (e) {
+    res.status(400).send({ error: e.message });
+  }
 });
 
 app.listen(process.env.PORT, '0.0.0.0', () => {
