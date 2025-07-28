@@ -4,6 +4,28 @@
     let liked = false;
     const whatsappNumber = "551640424000";
     const whatsappLink = `https://wa.me/${whatsappNumber}`;
+
+    async function likeProduct() {
+    try {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/like_product/${product.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include'
+        });
+
+        if (!res.ok) throw new Error('Erro ao favoritar produto');
+
+        const data = await res.json();
+        liked = true;
+        product.liked += 1;
+    } catch (err) {
+        console.error(err);
+        alert('Você precisa estar logado para curtir produtos.');
+    }
+}
+
 </script>
 
 <style>
@@ -102,7 +124,7 @@
         <div class="d-flex justify-content-between align-items-center">
             <a href="/produto/{product.id}" class="btn btn-primary">Comprar</a>
             <div class="d-flex align-items-center">
-                <button class="like-btn" on:click={() => liked = !liked} aria-label="true">
+                <button class="like-btn" on:click={likeProduct} aria-label="true">
                     <i class={liked ? "bi bi-heart-fill" : "bi bi-heart"}></i>
                 </button>
                 <span class="text-muted ms-2">({product.liked})</span>

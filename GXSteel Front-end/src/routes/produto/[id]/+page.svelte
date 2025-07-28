@@ -12,6 +12,7 @@
     let stars = 0;
     let rating = 0;
     let comment = '';
+    let liked = false;
     $: id = $page.params.id
 
     function changeImage(src) {
@@ -22,16 +23,64 @@
         window.open(`https://api.whatsapp.com/send?phone=+551640424000&text=Olá, gostaria de saber mais sobre o produto: ${produto.name}`, '_blank');
     }
 
-    onMount(async () => {
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/product/${id}`);
+    async function submitReview() {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/update_product/${id}`, {
+          method: 'PUT',
+          headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json'
+          },
+          body: JSON.stringify({
+              comments: [...reviews, { comment, rating }]
+          })
+      });
+
+      const data = await response.json();
+      console.log(data);
+  }
+
+  async function toggleLike() {
+    const url = `${import.meta.env.VITE_API_URL}/api/${liked ? 'unlike_product' : 'like_product'}/${produto._id}`;
+    const method = 'PUT';
+    try {
+        const res = await fetch(url, {
+            method,
+            credentials: 'include'
+        });
         const data = await res.json();
-        produto = data;
-        mainImage = Array.isArray(data.image) ? data.image[0] : '';
-        ratings = data.ratings;
-        q_ratings = Object.keys(ratings).length;
-        thumbnails = Array.isArray(data.image) ? [...data.image] : [];
-        reviews = Array.isArray(data.comments) ? [...data.comments] : [];
-    });
+        if (res.ok) {
+            liked = !liked;
+            produto.likes = liked ? (produto.likes || 0) + 1 : Math.max((produto.likes || 1) - 1, 0);
+        } else {
+            console.error(data.error || 'Erro ao curtir/descurtir');
+        }
+    } catch (e) {
+        console.error('Erro:', e);
+    }
+}
+
+
+    onMount(async () => {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/product/${id}`);
+      const data = await res.json();
+      produto = data;
+      mainImage = Array.isArray(data.image) ? data.image[0] : '';
+      ratings = data.ratings;
+      q_ratings = Object.keys(ratings).length;
+      thumbnails = Array.isArray(data.image) ? [...data.image] : [];
+      reviews = Array.isArray(data.comments) ? [...data.comments] : [];
+
+      try {
+          const userRes = await fetch(`${import.meta.env.VITE_API_URL}/api/protected`, {
+              credentials: 'include'
+          });
+          const userData = await userRes.json();
+          liked = userData.liked && userData.liked.includes(produto._id);
+      } catch (err) {
+          console.warn("Usuário não autenticado ou erro ao buscar favoritos");
+      }
+  });
+
 </script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"/>
@@ -80,9 +129,10 @@
         <!--<i class="bi bi-cart-plus"></i>-->
 				 Peça agora!
 			</button>
-			<button class="btn btn-outline-secondary btn-lg mb-3">
-				<i class="bi bi-heart"></i> Add to Wishlist
-			</button>
+			<button class="btn btn-outline-secondary btn-lg mb-3" on:click={toggleLike}>
+        <i class={`bi ${liked ? 'bi-heart-fill text-danger' : 'bi-heart'}`}></i>
+        {liked ? ' Remover dos Favoritos' : ' Adicionar aos Favoritos'}
+    </button>
 			<div class="mt-4">
 				<h5>Principais Características:</h5>
                 <ul>

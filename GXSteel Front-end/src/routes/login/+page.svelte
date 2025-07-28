@@ -41,14 +41,14 @@
 
 <main>
     <div class="subheader">
-        <h1><strong>Sign in</strong></h1>
+        <h1><strong>Login</strong></h1>
         <p>Melhor site para a compra do seu aço</p>
     </div>
 
     <div class="login-container">
         <div class="form-container">
-            <h1><strong>Sign in</strong></h1>
-            <p>Tema da indústria siderúrgica.</p>
+            <h1><strong>Login</strong></h1>
+            <p>Melhor site para a compra do seu aço</p>
             <p>Novo cliente? <a href="/cadastro">Criar uma conta</a></p>
 
             <div class="input-group">

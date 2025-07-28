@@ -6,8 +6,8 @@
         <h2 class="text-uppercase fw-bold" style="font-size: 1.2rem;">O MELHOR DO AÇO</h2>
         <h1 class="fw-bold" style="font-size: 2.5rem; max-width: 50rem;">Uma das maiores siderurgicas, com mais de 10 Milhões de toneladas anuais.</h1>
         <div class="mt-3">
-          <button class="btn btn-light fw-bold px-4 me-3" style="border-radius: 0%; width: 10rem; height: 4rem;">PEDIR AGORA</button>
-          <button class="btn btn-warning fw-bold px-4" style="background-color: var(--button-background); border: none; color: white; border-radius: 0%; width: 10rem; height: 4rem;">FALE CONOSCO</button>
+          <button on:click={() => (window.location.href = "/catalogo")} class="btn btn-light fw-bold px-4 me-3" style="border-radius: 0%; width: 10rem; height: 4rem;">PEDIR AGORA</button>
+          <button on:click={() => (window.location.href = "/contato")} class="btn btn-warning fw-bold px-4" style="background-color: var(--button-background); border: none; color: white; border-radius: 0%; width: 10rem; height: 4rem;">FALE CONOSCO</button>
         </div>
       </div>
     </div>
@@ -18,8 +18,8 @@
         <h2 class="text-uppercase fw-bold" style="font-size: 1.2rem;">O MELHOR DO AÇO</h2>
         <h1 class="fw-bold" style="font-size: 3rem; max-width: 40rem;">Especialistas em aço de alta performace para aplicações industriais exigentes.</h1>
         <div class="mt-3">
-          <button class="btn btn-light fw-bold px-4 me-3" style="border-radius: 0%; width: 10rem; height: 4rem;">PEDIR AGORA</button>
-          <button class="btn btn-warning fw-bold px-4" style="background-color: var(--button-background); border: none; color: white; border-radius: 0%; width: 10rem; height: 4rem;">FALE CONOSCO</button>
+          <button on:click={() => (window.location.href = "/catalog")} class="btn btn-light fw-bold px-4 me-3" style="border-radius: 0%; width: 10rem; height: 4rem;">PEDIR AGORA</button>
+          <button on:click={() => (window.location.href = "/contato")} class="btn btn-warning fw-bold px-4" style="background-color: var(--button-background); border: none; color: white; border-radius: 0%; width: 10rem; height: 4rem;">FALE CONOSCO</button>
         </div>
       </div>
     </div>

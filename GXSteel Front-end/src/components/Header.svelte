@@ -121,7 +121,7 @@
         </div>
       </a>
 
-      <button id="padrao_button" class="cotacao-btn">Obter Cotação</button>
+      <button on:click={() => (window.location.href = "/contato")} id="padrao_button" class="cotacao-btn">Obter Cotação</button>
     </div>
   </div>
 
@@ -153,7 +153,6 @@
           aria-labelledby="dropdownMenuButton"
           style="font-size: 0.9rem;"
         >
-          <a class="dropdown-item" href="/">PÁGINA 1</a>
           <a class="dropdown-item" href="catalogo">CATALOGO</a>
         </div>
       </div>
@@ -175,7 +174,7 @@
           aria-labelledby="dropdownMenuButton"
           style="font-size: 0.9rem;"
         >
-          <a class="dropdown-item" href="#">SOBRE NÓS</a>
+          <a class="dropdown-item" href="/sobre">SOBRE NÓS</a>
           <a class="dropdown-item" href="/login">LOGIN</a>
           <a class="dropdown-item" href="#">REGISTRO</a>
         </div>

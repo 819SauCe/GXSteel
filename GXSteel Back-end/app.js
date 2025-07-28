@@ -64,7 +64,8 @@ const productSchema = new mongoose.Schema({
         rating: Number,
         comment: String,
         createdAt: { type: Date, default: Date.now }
-    }]
+    }],
+    likes: { type: Number, default: 0 }
 });
 
 productSchema.index({ name: 1 }, { unique: true });

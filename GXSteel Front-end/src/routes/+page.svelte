@@ -14,19 +14,19 @@
   let membros = 100;
 
   const equipeOriginal = [
-    { nome: "BELLA MIKE", cargo: "THE MANAGER", foto: "/253x253-0.jpg" },
-    { nome: "HESSY KOWA", cargo: "THE STAINLESSAÇO ER", foto: "/253x253-1.jpg"},
-    { nome: "MICHEL BON", cargo: "THE WORKER", foto: "/253x253-2.jpg" },
-    { nome: "JHON SMITH", cargo: "THE WORKER", foto: "/253x253-3.jpg" },
-    { nome: "LUE ABELL", cargo: "THE CEO", foto: "/253x253.jpg" },
+    { nome: "BELLA MIKE", cargo: "THE MANAGER", foto: "./253x253-0.jpg" },
+    { nome: "HESSY KOWA", cargo: "THE STAINLESSAÇO ER", foto: "./253x253-1.jpg"},
+    { nome: "MICHEL BON", cargo: "THE WORKER", foto: "./253x253-2.jpg" },
+    { nome: "JHON SMITH", cargo: "THE WORKER", foto: "./253x253-3.jpg" },
+    { nome: "LUE ABELL", cargo: "THE CEO", foto: "./253x253.jpg" },
   ];
 
   let produtos = [];
 
   let blog = [
-    { id: 1, day: 7, month: 5, year: 2025, title: "Dicas para o melhor design de Structre de aço", desc: "Com nosso conhecimento e experiência, é nosso objetivo atender às necessidades de nossos clientes, indo além de suas expectativas.", img:"/350x200.jpg"},
-    { id: 2, day: 8, month: 5, year: 2025, title: "Dicas para o melhor design de Structre de aço", desc: "Com nosso conhecimento e experiência, é nosso objetivo atender às necessidades de nossos clientes, indo além de suas expectativas.", img:"/350x200.jpg"},
-    { id: 3, day: 9, month: 5, year: 2025, title: "Dicas para o melhor design de Structre de aço", desc: "Com nosso conhecimento e experiência, é nosso objetivo atender às necessidades de nossos clientes, indo além de suas expectativas.", img:"/350x200.jpg"}
+    { id: 1, day: 7, month: 5, year: 2025, title: "Dicas para o melhor design de Structre de aço", desc: "Com nosso conhecimento e experiência, é nosso objetivo atender às necessidades de nossos clientes, indo além de suas expectativas.", img:"./350x200.jpg"},
+    { id: 2, day: 8, month: 5, year: 2025, title: "Dicas para o melhor design de Structre de aço", desc: "Com nosso conhecimento e experiência, é nosso objetivo atender às necessidades de nossos clientes, indo além de suas expectativas.", img:"./350x200.jpg"},
+    { id: 3, day: 9, month: 5, year: 2025, title: "Dicas para o melhor design de Structre de aço", desc: "Com nosso conhecimento e experiência, é nosso objetivo atender às necessidades de nossos clientes, indo além de suas expectativas.", img:"./350x200.jpg"}
   ]
 
   let equipe = [...equipeOriginal, ...equipeOriginal];
@@ -90,12 +90,12 @@
 <!--Imagem dos anos de experiencia-->
 <main style="display: flex; gap: 1rem; margin-top: 5rem; justify-content: center;">
   <div style="position: relative; width: fit-content;">
-    <img src="/570x420.jpg" alt="rolos" />
+    <img src="./570x420.jpg" alt="rolos" />
     <div class="container-experiencia">
       <p style="font-size: 58px;"><strong>{anos_experiencia}</strong></p>
       <p>ANOS DE EXPERIÊNCIA</p>
     </div>
-    <img class="njkads" src="/275x200.jpg" alt="njkads" />
+    <img class="njkads" src="./275x200.jpg" alt="njkads" />
   </div>
   <div style="display: flex; flex-direction:column;gap:0px;">
     <p style="color: var(--button-background);">Sobre nós</p>
@@ -109,10 +109,7 @@
       Uma força global na produção e<br /> engenharia de aço.
     </h4>
     <p>
-      Com nosso conhecimento e experiência, nosso objetivo é atender às<br />
-      necessidades dos clientes, superando expectativas. A Global Trade BR<br />
-      é a escolha certa para soluções em aço de alta qualidade e ideias<br />
-      inovadoras em metalurgia e estruturas ornamentais. Saiba mais
+      Com expertise reconhecida, buscamos atender e superar as<br> expectativas dos clientes em soluções metálicas industriais e<br> ornamentais. 
     </p>
     <button class="cotacao-btn">Veja mais</button>
   </div>
@@ -157,7 +154,7 @@
 <!--Contratação botão-->
 <main class="contact-button-and-img">
     <div class="container-contrate">
-        <img src="/145x180.png" alt="bobina de aço">
+        <img src="./145x180.png" alt="bobina de aço">
         <h4>NOSSO AÇO É O MELHOR</h4>
         <button id="padrao_button" class="contrate-button" aria-label="true">Contrate agora</button>
     </div>
@@ -166,7 +163,7 @@
 <!--Divisoria com dados-->
 <main>
     <div id="div-background" class="divisoria-data">
-        <img id="img-background" class="img-background-class" src="/HP1.-bg.jpg" alt="backround-img">
+        <img id="img-background" class="img-background-class" src="./HP1.-bg.jpg" alt="backround-img">
         <div class="dados">
             <div style="width: 100%;">
                 <p style="color: var(--background-orange); font-size: 2rem; font-weight: 600;">{vendas_mes}+</p>
@@ -207,12 +204,12 @@
 <main class="background-imgs-siga">
     <div class="img-esquerda">
         <h2>Aço<br>Produção</h2>
-        <img class="img-fundo" src="/660x348.jpg" alt="bobinas" style="left: 0;">
+        <img class="img-fundo" src="./660x348.jpg" alt="bobinas" style="left: 0;">
     </div>
 
     <div class="img-direita">
         <h2>Siga nossa loja<br>No Instagram</h2>
-        <img class="img-fundo" src="/660x348-0.jpg" alt="tubos" style="right: 0;">
+        <img class="img-fundo" src="./660x348-0.jpg" alt="tubos" style="right: 0;">
     </div>
 </main>
 

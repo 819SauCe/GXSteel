@@ -1,8 +1,3 @@
-<script>
-  import { onMount } from 'svelte';
-  import { goto } from '$app/navigation';
-
-  onMount(() => {
-    goto('/catalogo');
-  });
-</script>
+<svelte:head>
+  <meta http-equiv="refresh" content="0;url=/catalogo" />
+</svelte:head>

@@ -1,4 +1,5 @@
 <script>
+    export const prerender = true;
     import "../style/all.css"
     import { page } from '$app/stores';
     import Header from "../components/Header.svelte";
