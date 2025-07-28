@@ -38,7 +38,7 @@ function waitForServer(timeout = 10000) {
 
   await waitForServer();
 
-  console.log('\n🔍 Testando rotas:\n');
+  console.log('\nTestando rotas:\n');
 
   for (const route of routes) {
     try {
@@ -55,5 +55,5 @@ function waitForServer(timeout = 10000) {
   }
 
   server.kill();
-  console.log('\n✅ Testes finalizados.');
+  console.log('\nTestes finalizados.');
 })();
