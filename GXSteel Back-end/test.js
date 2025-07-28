@@ -17,7 +17,7 @@ const http = axios.create({
   timeout: 5000,
 });
 
-function waitForServer(timeout = 20000, intervalMs = 500) {
+function waitForServer(timeout = 30000, intervalMs = 500) {
   return new Promise((resolve, reject) => {
     const start = Date.now();
 
@@ -27,8 +27,8 @@ function waitForServer(timeout = 20000, intervalMs = 500) {
         if (res.status < 500) {
           return resolve();
         }
-      } catch (_) {
-        // Aguarda nova tentativa
+      } catch (error) {
+        // Aguardando nova tentativa
       }
 
       if (Date.now() - start > timeout) {
