@@ -26,7 +26,6 @@
  * ```
  */
 declare module '$env/static/private' {
-	export const VITE_API_URL: string;
 	export const ALLUSERSPROFILE: string;
 	export const APPDATA: string;
 	export const CHROME_CRASHPAD_PIPE_NAME: string;
@@ -36,26 +35,27 @@ declare module '$env/static/private' {
 	export const CommonProgramW6432: string;
 	export const COMPUTERNAME: string;
 	export const ComSpec: string;
+	export const CORS_ORIGIN: string;
 	export const DokanLibrary2: string;
 	export const DokanLibrary2_LibraryPath_x64: string;
 	export const DokanLibrary2_LibraryPath_x86: string;
 	export const DriverData: string;
 	export const EDITOR: string;
-	export const EFC_7220_1262719628: string;
-	export const EFC_7220_1592913036: string;
-	export const EFC_7220_2283032206: string;
-	export const EFC_7220_2775293581: string;
-	export const EFC_7220_3789132940: string;
-	export const FPS_BROWSER_APP_PROFILE_STRING: string;
-	export const FPS_BROWSER_USER_PROFILE_STRING: string;
+	export const EFC_5876_1262719628: string;
+	export const EFC_5876_1592913036: string;
+	export const EFC_5876_2283032206: string;
+	export const EFC_5876_2775293581: string;
+	export const EFC_5876_3789132940: string;
 	export const GIT_ASKPASS: string;
 	export const HOME: string;
 	export const HOMEDRIVE: string;
 	export const HOMEPATH: string;
 	export const INIT_CWD: string;
+	export const JWT_SECRET: string;
 	export const LANG: string;
 	export const LOCALAPPDATA: string;
 	export const LOGONSERVER: string;
+	export const MONGODB_URI: string;
 	export const NODE: string;
 	export const NODE_ENV: string;
 	export const npm_command: string;
@@ -84,6 +84,7 @@ declare module '$env/static/private' {
 	export const OS: string;
 	export const Path: string;
 	export const PATHEXT: string;
+	export const PORT: string;
 	export const PROCESSOR_ARCHITECTURE: string;
 	export const PROCESSOR_IDENTIFIER: string;
 	export const PROCESSOR_LEVEL: string;
@@ -105,6 +106,8 @@ declare module '$env/static/private' {
 	export const USERDOMAIN_ROAMINGPROFILE: string;
 	export const USERNAME: string;
 	export const USERPROFILE: string;
+	export const VBOX_MSI_INSTALL_PATH: string;
+	export const VITE_API_URL: string;
 	export const VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 	export const VSCODE_GIT_ASKPASS_MAIN: string;
 	export const VSCODE_GIT_ASKPASS_NODE: string;
@@ -143,7 +146,6 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
-		VITE_API_URL: string;
 		ALLUSERSPROFILE: string;
 		APPDATA: string;
 		CHROME_CRASHPAD_PIPE_NAME: string;
@@ -153,26 +155,27 @@ declare module '$env/dynamic/private' {
 		CommonProgramW6432: string;
 		COMPUTERNAME: string;
 		ComSpec: string;
+		CORS_ORIGIN: string;
 		DokanLibrary2: string;
 		DokanLibrary2_LibraryPath_x64: string;
 		DokanLibrary2_LibraryPath_x86: string;
 		DriverData: string;
 		EDITOR: string;
-		EFC_7220_1262719628: string;
-		EFC_7220_1592913036: string;
-		EFC_7220_2283032206: string;
-		EFC_7220_2775293581: string;
-		EFC_7220_3789132940: string;
-		FPS_BROWSER_APP_PROFILE_STRING: string;
-		FPS_BROWSER_USER_PROFILE_STRING: string;
+		EFC_5876_1262719628: string;
+		EFC_5876_1592913036: string;
+		EFC_5876_2283032206: string;
+		EFC_5876_2775293581: string;
+		EFC_5876_3789132940: string;
 		GIT_ASKPASS: string;
 		HOME: string;
 		HOMEDRIVE: string;
 		HOMEPATH: string;
 		INIT_CWD: string;
+		JWT_SECRET: string;
 		LANG: string;
 		LOCALAPPDATA: string;
 		LOGONSERVER: string;
+		MONGODB_URI: string;
 		NODE: string;
 		NODE_ENV: string;
 		npm_command: string;
@@ -201,6 +204,7 @@ declare module '$env/dynamic/private' {
 		OS: string;
 		Path: string;
 		PATHEXT: string;
+		PORT: string;
 		PROCESSOR_ARCHITECTURE: string;
 		PROCESSOR_IDENTIFIER: string;
 		PROCESSOR_LEVEL: string;
@@ -222,6 +226,8 @@ declare module '$env/dynamic/private' {
 		USERDOMAIN_ROAMINGPROFILE: string;
 		USERNAME: string;
 		USERPROFILE: string;
+		VBOX_MSI_INSTALL_PATH: string;
+		VITE_API_URL: string;
 		VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 		VSCODE_GIT_ASKPASS_MAIN: string;
 		VSCODE_GIT_ASKPASS_NODE: string;

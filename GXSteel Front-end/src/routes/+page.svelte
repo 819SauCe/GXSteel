@@ -100,11 +100,9 @@
   <div style="display: flex; flex-direction:column;gap:0px;">
     <p style="color: var(--button-background);">Sobre nós</p>
     <h1 style="font-size: 46px; font-weight: 700; line-height: 1;">
-      AÇO MELHOR,
+      Melhor aço,
     </h1>
-    <h1
-      style="color: var(--button-background); font-size: 46px; font-weight: 700; line-height: 1;"
-    >
+    <h1 style="color: var(--button-background); font-size: 46px; font-weight: 700; line-height: 1;">
       SEM RISCOS
     </h1>
     <h4 style="font-size: 24px;margin-top: 25px;">
