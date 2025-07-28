@@ -11,22 +11,34 @@ const routes = [
   { method: 'POST', url: '/api/login', data: { username: 'x', password: 'x' } },
 ];
 
-function waitForServer(timeout = 10000) {
-  return new Promise((resolve) => {
+const http = axios.create({
+  baseURL: BASE_URL,
+  validateStatus: () => true,
+  timeout: 5000,
+});
+
+function waitForServer(timeout = 20000, intervalMs = 500) {
+  return new Promise((resolve, reject) => {
     const start = Date.now();
-    const interval = setInterval(async () => {
+
+    const check = async () => {
       try {
-        await axios.get(BASE_URL + '/api/products');
-        clearInterval(interval);
-        resolve();
-      } catch (e) {
-        if (Date.now() - start > timeout) {
-          clearInterval(interval);
-          console.error('Servidor não respondeu a tempo');
-          process.exit(1);
+        const res = await http.get('/api/products');
+        if (res.status < 500) {
+          return resolve();
         }
+      } catch (_) {
+        // Aguarda nova tentativa
       }
-    }, 500);
+
+      if (Date.now() - start > timeout) {
+        return reject(new Error('Servidor não respondeu a tempo'));
+      }
+
+      setTimeout(check, intervalMs);
+    };
+
+    check();
   });
 }
 
@@ -36,24 +48,28 @@ function waitForServer(timeout = 10000) {
     stdio: ['ignore', 'inherit', 'inherit'],
   });
 
-  await waitForServer();
+  try {
+    await waitForServer();
+    console.log('\nIniciando testes de rotas:\n');
 
-  console.log('\nTestando rotas:\n');
-
-  for (const route of routes) {
-    try {
-      const response = await axios({
-        method: route.method,
-        url: BASE_URL + route.url,
-        data: route.data || {},
-        validateStatus: () => true,
-      });
-      console.log(`[${route.method}] ${route.url} → ${response.status}`);
-    } catch (e) {
-      console.log(`[${route.method}] ${route.url} → ERRO`);
+    for (const route of routes) {
+      try {
+        const response = await http.request({
+          method: route.method,
+          url: route.url,
+          data: route.data || {},
+        });
+        console.log(`[${route.method}] ${route.url} -> ${response.status}`);
+      } catch (error) {
+        console.log(`[${route.method}] ${route.url} -> ERRO: ${error.message}`);
+      }
     }
-  }
 
-  server.kill();
-  console.log('\nTestes finalizados.');
+    console.log('\nTestes concluídos.');
+  } catch (error) {
+    console.error(`Erro ao iniciar servidor: ${error.message}`);
+    process.exit(1);
+  } finally {
+    server.kill('SIGTERM');
+  }
 })();
