@@ -2,7 +2,7 @@
     import { onMount } from "svelte";
     import { tick } from "svelte";
     import ProductCard from "../../components/Product_card.svelte";
-    import Loading from "../../components/Loading.svelte";
+    import Loading from '@components/Loading.svelte'
 
     let produtos = [];
     let produtos_encontrados = false;

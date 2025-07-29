@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  import Loading from './Loading.svelte';
+  import Loading from '@components/Loading.svelte'
 
   let carregado = false;
 
