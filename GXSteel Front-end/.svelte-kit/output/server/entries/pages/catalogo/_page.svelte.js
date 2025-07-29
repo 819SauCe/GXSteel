@@ -1,6 +1,6 @@
 import { Q as ensure_array_like, E as attr, N as escape_html, S as stringify, T as attr_class, K as bind_props, D as pop, z as push, U as clsx, V as maybe_selected } from "../../../chunks/index.js";
 /* empty css                  */
-import { L as Loading } from "../../../chunks/loading.js";
+import { L as Loading } from "../../../chunks/Loading.js";
 function Product_card($$payload, $$props) {
   push();
   let product = $$props["product"];

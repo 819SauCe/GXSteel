@@ -33,6 +33,9 @@ jobs:
           echo "Executando teste fake (sem dependência de MongoDB)"
           # Aqui você pode rodar um teste mock ou simplesmente checar se arquivos existem:
           ls "GXSteel Back-end"
+      - name: Listar arquivos do build
+        run: ls -lh "GXSteel Front-end/build"
+
 
   deploy:
     needs: [build-front, test-back]

@@ -8,6 +8,17 @@
       "_internal.js"
     ]
   },
+  "_Loading.Cuwup4rW.css": {
+    "file": "_app/immutable/assets/Loading.Cuwup4rW.css",
+    "src": "_Loading.Cuwup4rW.css"
+  },
+  "_Loading.js": {
+    "file": "chunks/Loading.js",
+    "name": "Loading",
+    "css": [
+      "_app/immutable/assets/Loading.Cuwup4rW.css"
+    ]
+  },
   "_all.Bh1xi7Ri.css": {
     "file": "_app/immutable/assets/all.Bh1xi7Ri.css",
     "src": "_all.Bh1xi7Ri.css"
@@ -32,17 +43,6 @@
     "name": "internal",
     "imports": [
       "_index.js"
-    ]
-  },
-  "_loading.Cuwup4rW.css": {
-    "file": "_app/immutable/assets/loading.Cuwup4rW.css",
-    "src": "_loading.Cuwup4rW.css"
-  },
-  "_loading.js": {
-    "file": "chunks/loading.js",
-    "name": "loading",
-    "css": [
-      "_app/immutable/assets/loading.Cuwup4rW.css"
     ]
   },
   "_state.svelte.js": {
@@ -93,7 +93,7 @@
     "imports": [
       "_index.js",
       "_stores.js",
-      "_loading.js"
+      "_Loading.js"
     ],
     "css": [
       "_app/immutable/assets/_layout.e_Jh4XhE.css",
@@ -120,7 +120,7 @@
     "isEntry": true,
     "imports": [
       "_index.js",
-      "_loading.js"
+      "_Loading.js"
     ],
     "css": [
       "_app/immutable/assets/_page.Brea2Q_u.css",
@@ -159,7 +159,7 @@
     "isEntry": true,
     "imports": [
       "_index.js",
-      "_loading.js"
+      "_Loading.js"
     ]
   },
   "src/routes/produto/[id]/+page.svelte": {

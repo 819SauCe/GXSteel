@@ -2,7 +2,7 @@ import { E as attr, D as pop, z as push, F as head, G as store_get, I as slot, J
 /* empty css               */
 import { p as page } from "../../chunks/stores.js";
 import "clsx";
-import { L as Loading } from "../../chunks/loading.js";
+import { L as Loading } from "../../chunks/Loading.js";
 function Header($$payload) {
   const href_localização = "https://www.google.com/maps/place/Global+Trade+Technology/@-21.2543382,-48.3494831,17.62z/data=!4m15!1m8!3m7!1s0x94b96bafbe32aaf1:0x8efff532725a23b0!2sAv.+Dr.+Jos%C3%A9+Ant%C3%B4nio+Miziara+-+Distrito+Industrial+Jos%C3%A9+Aparecido+Tom%C3%A9,+Jaboticabal+-+SP,+14874-002!3b1!8m2!3d-21.2496554!4d-48.3500263!16s%2Fg%2F11krjt26pt!3m5!1s0x94b9414f0f5a80ef:0x606b957e361182cc!8m2!3d-21.2552398!4d-48.3477987!16s%2Fg%2F11hbk996bn?entry=ttu&g_ep=EgoyMDI1MDYyNi4wIKXMDSoASAFQAw%3D%3D";
   const href_email = "mailto:vendas@globaltradebr.com.br";
