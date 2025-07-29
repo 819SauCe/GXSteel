@@ -3,7 +3,7 @@
 </svelte:head>
 
 <script>
-  import Loading from '../../components/Loading.svelte';
+  import Loading from '../../components/Loading.svelte'
 </script>
 
 <Loading />
