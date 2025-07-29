@@ -4,6 +4,7 @@
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
+
 .container-experiencia {
   position: absolute;
   top: 0;
@@ -16,12 +17,14 @@
   display: flex;
   gap: 0.5rem;
 }
+
 .njkads {
   position: absolute;
   bottom: -20%;
   left: -20%;
   border: 20px solid var(--background-color);
 }
+
 .cotacao-btn {
   width: 9rem;
   height: 4rem;
@@ -33,83 +36,51 @@
   margin-right: 12rem;
   margin-top: 1.5rem;
 }
-.botao-carrossel {
-  width: 3rem;
-  height: 3rem;
-  border: none;
-  background-color: var(--button-background);
-  border-radius: 50%;
-  cursor: pointer;
-}
-.botao-carrossel span {
-  width: 1rem;
-  height: 1rem;
-  font-weight: 1200;
-}
-.carrossel-viewport {
-  overflow-x: hidden;
-  width: 1020px;
-}
-.carrossel-container {
-  display: flex;
-  gap: 10px;
-  width: fit-content;
-}
-.carrossel-item {
-  min-width: 250px;
-  flex-shrink: 0;
-}
+
 .container-contrate {
-  position: relative;
   display: flex;
-  margin-left: 12rem;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
   width: 75%;
-  height: 7rem;
+  width: 60rem;
+  min-width: 0;
   background-color: #fff;
   border-radius: 15px;
+  position: relative;
+  margin: 0 auto;
+  height: auto;
 }
+
 .container-contrate img {
-  position: absolute;
-  bottom: -0.3rem;
-  left: 40px;
+  width: 80px;
+  height: auto;
+  position: static;
+  margin: 0;
 }
+
 .container-contrate h4 {
-  font-size: 22px;
-  margin-top: 2.5rem;
-  margin-left: 15rem;
+  font-size: 1.1rem;
+  margin: 0;
+  flex: 1;
   font-weight: bold;
 }
+
 .contrate-button {
-  width: 9rem;
-  height: 4rem;
-  position: absolute;
-  right: 1rem;
-  top: 1.5rem;
+  color: white;
+  background-color: var(--button-background);
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 1rem;
+  width: auto;
 }
-.equipe {
-  display: flex;
-  justify-content: center;
-  margin-top: 3rem;
-}
-.btn-prox-ant {
-  display: flex;
-  gap: 1rem;
-  position: absolute;
-  right: 12rem;
-  margin-top: 3rem;
-}
+
 .img-background-class {
-  height: 20rem;
-}
-.dados {
-  position: absolute;
-  top: 50%;
-  display: flex;
-  gap: 5rem;
-  text-align: center;
-  margin-left: 50%;
-  transform: translate(-50%);
   width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
 .veja-mais {
@@ -120,53 +91,16 @@
   margin-top: 3rem;
 }
 
-.img-direita {
-  position: relative;
-}
-.img-esquerda {
-  position: relative;
-}
-
-.img-esquerda img {
-  position: absolute;
-  width: 50%;
-  height: auto;
-  left: 0px;
-}
-
-.img-direita img {
-  position: absolute;
-  width: 50%;
-  height: auto;
-  right: 0px;
-}
-
-.img-direita h2 {
-  position: absolute;
-  z-index: 10;
-  right: 35rem;
-  margin-top: 3rem;
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-
-.img-esquerda h2 {
-  position: absolute;
-  z-index: 10;
-  margin-left: 1rem;
-  margin-top: 3rem;
-  font-weight: bold;
-  font-size: 1.5rem;
-}
 .apresentacao-blog {
-  margin-top: 31rem;
+  margin-top: 3rem;
 }
 
 .fkdaj {
   color: var(--hover-a);
 }
 
-.dargbjh, .fkdaj {
+.dargbjh,
+.fkdaj {
   margin-left: 7.5rem;
 }
 
@@ -177,4 +111,269 @@
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 3rem;
+}
+
+.ceo-section {
+  padding: 6rem 10%;
+  background-color: #f7f7f7;
+}
+
+.ceo-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.ceo-texto {
+  flex: 1;
+  min-width: 300px;
+}
+
+.ceo-intro {
+  color: var(--button-background);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.ceo-titulo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.ceo-descricao {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+.ceo-foto {
+  width: 260px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-nos-section {
+  padding: 4rem 5%;
+  background-color: #f9f9f9;
+}
+
+.sobre-nos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.sobre-nos-imagem {
+  position: relative;
+  flex: 1;
+  min-width: 320px;
+  max-width: 600px;
+}
+
+.sobre-nos-imagem img:first-child {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.njkads {
+  position: absolute;
+  bottom: -20%;
+  left: -20%;
+  width: 200px;
+  max-width: 60%;
+  border: 10px solid var(--background-color);
+}
+
+.container-experiencia {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem 1.5rem;
+  background-color: var(--background-orange);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-weight: bold;
+}
+
+.anos-numero {
+  font-size: 3.5rem;
+  margin: 0;
+}
+
+.sobre-nos-texto {
+  flex: 1;
+  min-width: 320px;
+  max-width: 600px;
+}
+
+.subtitulo {
+  color: var(--button-background);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.titulo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.destaque {
+  color: var(--button-background);
+}
+
+.descricao-curta {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.descricao {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.instagram-acos-section {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+.instagram-col {
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+}
+
+.instagram-col img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.instagram-col h2 {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  max-width: 90%;
+  line-height: 1.3;
+}
+
+.divisoria-data {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/HP1.-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.img-background-class {
+  display: none;
+}
+
+.dados {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+  gap: 1rem;
+}
+
+.dados .text {
+  font-size: 1.2rem;
+}
+
+.dados > div {
+  flex: 1 1 200px;
+  min-width: 150px;
+}
+
+.text1 {
+    font-size: 1.5rem;
+    color: var(--background-orange);
+    font-weight: 600;
+  }
+
+@media (max-width: 768px) {
+  .dados {
+    position: static;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+  }
+
+  .dados > div {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .dados > div p:first-child {
+    font-size: 1.5rem;
+  }
+
+  .dados > div p:last-child {
+    font-size: 1rem;
+  }
+
+  .divisoria-data {
+    display: block;
+    min-height: unset;
+  }
+
+  .instagram-col h2 {
+    font-size: 1.25rem;
+    top: 5%;
+    left: 5%;
+  }
+
+  .text1 {
+    font-size: 1.1rem;
+    color: var(--background-orange);
+    font-weight: 600;
+  }
+
+  .container-contrate {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+  }
+  .container-contrate img {
+    width: 60px;
+    margin: 0 auto;
+  }
+  .contrate-button {
+    width: 100%;
+    margin: 0.5rem 0 0 0;
+  }
 }

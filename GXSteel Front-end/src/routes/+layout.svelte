@@ -7,6 +7,9 @@
     import Footer from "../components/Footer.svelte";
 </script>
 
+<svelte:head>
+    <link rel="icon" href="/Logo-XSteel.png" type="image/png">
+</svelte:head>
 
 <Header />
 {#if $page.url.pathname == "/"}

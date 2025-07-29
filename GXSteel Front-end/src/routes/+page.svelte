@@ -6,21 +6,11 @@
   import BlogContainer from "../components/Blog_container.svelte";
   import WppUp from "../components/Wpp-up.svelte";
   
-
   let itemContainer;
   let anos_experiencia = 25
   let vendas_mes = 100;
   let experiencia = 100;
   let membros = 100;
-
-  const equipeOriginal = [
-    { nome: "BELLA MIKE", cargo: "THE MANAGER", foto: "./253x253-0.jpg" },
-    { nome: "HESSY KOWA", cargo: "THE STAINLESSAÇO ER", foto: "./253x253-1.jpg"},
-    { nome: "MICHEL BON", cargo: "THE WORKER", foto: "./253x253-2.jpg" },
-    { nome: "JHON SMITH", cargo: "THE WORKER", foto: "./253x253-3.jpg" },
-    { nome: "LUE ABELL", cargo: "THE CEO", foto: "./253x253.jpg" },
-  ];
-
   let produtos = [];
 
   let blog = [
@@ -29,22 +19,8 @@
     { id: 3, day: 9, month: 5, year: 2025, title: "Dicas para o melhor design de Structre de aço", desc: "Com nosso conhecimento e experiência, é nosso objetivo atender às necessidades de nossos clientes, indo além de suas expectativas.", img:"./350x200.jpg"}
   ]
 
-  let equipe = [...equipeOriginal, ...equipeOriginal];
-
-  function avancarItem() {
-    itemContainer.scrollBy({ left: 250, behavior: "smooth" });
-    setTimeout(() => {
-      if (itemContainer.scrollLeft >= itemContainer.scrollWidth / 2) {
-        itemContainer.scrollLeft = 0;
-      }
-    }, 500);
-  }
-
-  function voltarItem() {
-    if (itemContainer.scrollLeft === 0) {
-      itemContainer.scrollLeft = itemContainer.scrollWidth / 2;
-    }
-    itemContainer.scrollBy({ left: -250, behavior: "smooth" });
+  function redirectToAbout() {
+    location.href = "/sobre"
   }
 
   function redirectToCatalog() {
@@ -87,141 +63,117 @@
     });
 </script>
 
-<!--Imagem dos anos de experiencia-->
-<main style="display: flex; gap: 1rem; margin-top: 5rem; justify-content: center;">
-  <div style="position: relative; width: fit-content;">
-    <img src="./570x420.jpg" alt="rolos" />
-    <div class="container-experiencia">
-      <p style="font-size: 58px;"><strong>{anos_experiencia}</strong></p>
-      <p>ANOS DE EXPERIÊNCIA</p>
-    </div>
-    <img class="njkads" src="./275x200.jpg" alt="njkads" />
-  </div>
-  <div style="display: flex; flex-direction:column;gap:0px;">
-    <p style="color: var(--button-background);">Sobre nós</p>
-    <h1 style="font-size: 46px; font-weight: 700; line-height: 1;">
-      Melhor aço,
-    </h1>
-    <h1 style="color: var(--button-background); font-size: 46px; font-weight: 700; line-height: 1;">
-      SEM RISCOS
-    </h1>
-    <h4 style="font-size: 24px;margin-top: 25px;">
-      Uma força global na produção e<br /> engenharia de aço.
-    </h4>
-    <p>
-      Com expertise reconhecida, buscamos atender e superar as<br> expectativas dos clientes em soluções metálicas industriais e<br> ornamentais. 
-    </p>
-    <button class="cotacao-btn">Veja mais</button>
-  </div>
-</main>
+<svelte:head>
+  <title>Aço de Alta Qualidade | Soluções Industriais, Produtos e Engenharia – GXSteel</title>
+  <meta name="description" content="GXSteel - Soluções Industriais, Produtos e Engenharia - Acesso aos melhores produtos de aço de alta qualidade." />
+</svelte:head>
 
-<!--Nosso time-->
-<main style="margin-top: 10rem;">
-    <div style="display: flex;">
-        <div>
-            <p style="color: var(--button-background); margin-left: 12rem;">Conheça nosso time</p>
-            <h1 style="margin-left: 12rem;">NOSSA EQUIPE</h1>
+<main>
+  <section class="sobre-nos-section">
+    <div class="sobre-nos-container">
+      <div class="sobre-nos-imagem">
+        <img src="./570x420.jpg" alt="rolos de aço" />
+        <div class="container-experiencia">
+          <p class="anos-numero"><strong>{anos_experiencia}</strong></p>
+          <p>ANOS DE EXPERIÊNCIA</p>
         </div>
-
-        <!--botões de avançar e voltar-->
-        <div class="btn-prox-ant">
-            <button class="botao-carrossel" on:click={voltarItem} aria-label="true">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </button>
-            <button class="botao-carrossel" on:click={avancarItem} aria-label="true">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </button>
-        </div>
-    </div>
-
-  <div class="equipe">
-    <div class="carrossel-viewport" bind:this={itemContainer}>
-      <div class="carrossel-container">
-        {#each equipe as pessoa}
-          <div class="carrossel-item">
-            <img src={pessoa.foto} alt={pessoa.nome} />
-            <div>
-              <p>{pessoa.nome}</p>
-              <p>{pessoa.cargo}</p>
-            </div>
-          </div>
-        {/each}
+        <img class="njkads" src="./275x200.jpg" alt="linha de produção" />
+      </div>
+      <div class="sobre-nos-texto">
+        <p class="subtitulo">Sobre nós</p>
+        <h1 class="titulo">Melhor aço,<br><span class="destaque">SEM RISCOS</span></h1>
+        <h4 class="descricao-curta">Uma força global na produção e engenharia de aço.</h4>
+        <p class="descricao">
+          Com expertise reconhecida, buscamos atender e superar as expectativas dos clientes em soluções metálicas industriais e ornamentais.
+        </p>
+        <button on:click={redirectToAbout} class="cotacao-btn">Veja mais</button>
       </div>
     </div>
-  </div>
-</main>
+  </section>
 
-<!--Contratação botão-->
-<main class="contact-button-and-img">
-    <div class="container-contrate">
-        <img src="./145x180.png" alt="bobina de aço">
-        <h4>NOSSO AÇO É O MELHOR</h4>
-        <button id="padrao_button" class="contrate-button" aria-label="true">Contrate agora</button>
+  <section class="ceo-section">
+    <div class="ceo-content" style="margin-top: 3rem;">
+      <div class="ceo-texto">
+        <p class="ceo-intro">Liderança estratégica</p>
+        <h2 class="ceo-titulo">Conheça nosso CEO</h2>
+        <p class="ceo-descricao">
+          À frente da nossa operação, <strong>Roberto Bertolossi</strong> conduz a equipe com foco em inovação, excelência logística e atendimento técnico de alto padrão. Sua gestão impulsiona a entrega de soluções em aço com rastreabilidade, desempenho e compromisso total com o cliente.
+        </p>
+      </div>
+      <img src="roberto.png" alt="Roberto Bertolossi - CEO" class="ceo-foto" />
     </div>
-</main>
+  </section>
 
-<!--Divisoria com dados-->
-<main>
-    <div id="div-background" class="divisoria-data">
-        <img id="img-background" class="img-background-class" src="./HP1.-bg.jpg" alt="backround-img">
-        <div class="dados">
-            <div style="width: 100%;">
-                <p style="color: var(--background-orange); font-size: 2rem; font-weight: 600;">{vendas_mes}+</p>
-                <p style="color: white; font-size: 1.3rem; font-weight: 600;">Vendas Completas por Mês</p>
-            </div>
+  <section class="contact-button-and-img">
+      <div class="container-contrate">
+          <img src="./145x180.png" alt="bobina de aço">
+          <h4>Qualidade Certificada, Resultado Garantido</h4>
+          <button on:click={redirectToCatalog} id="padrao_button" class="contrate-button" aria-label="true">Compre agora</button>
+      </div>
+  </section>
 
-            <div style="width: 100%;">
-                <p style="color: var(--background-orange); font-size: 2rem; font-weight: 600;">{experiencia}+</p>
-                <p style="color: white; font-size: 1.3rem; font-weight: 600;">Anos de experiência prática</p>
-            </div>
+  <section>
+      <div id="div-background" class="divisoria-data">
+          <img id="img-background" class="img-background-class" src="./HP1.-bg.jpg" alt="backround-img">
+          <div class="dados">
+              <div style="width: 100%;">
+                  <p class="text1">{vendas_mes}+</p>
+                  <p class="text" style="color: white; font-weight: 600;">Vendas Completas por Mês</p>
+              </div>
 
-            <div style="width: 100%;">
-                <p style="color: var(--background-orange); font-size: 2rem; font-weight: 600;">{membros}</p>
-                <p style="color: white; font-size: 1.3rem; font-weight: 600;">Membros da equipe incríveis</p>
-            </div>
-        </div>
+              <div style="width: 100%;">
+                  <p class="text1">{experiencia}+</p>
+                  <p class="text" style="color: white; font-weight: 600;">Anos de experiência prática</p>
+              </div>
+
+              <div style="width: 100%;">
+                  <p class="text1">{membros}</p>
+                  <p class="text" style="color: white; font-weight: 600;">Membros da equipe incríveis</p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  {#if produtos.length > 0}
+  <section>
+      <div id="title-main">
+          <p>Nossos produtos</p>
+          <h2>Produtos em Destaque</h2>
+      </div>
+
+      <div id="vitrine-padrão" class="vitrine">
+          {#each produtos.slice(0, 4) as produto (produto.id)}
+              <ProdutoContainer {...produto} />
+          {/each}
+      </div>
+      {#if produtos.length > 4}
+          <button class="veja-mais" on:click={redirectToCatalog} id="padrao_button">Veja mais</button>
+      {/if}
+  </section>
+  {/if}
+
+  <section class="instagram-acos-section">
+    <div class="instagram-col">
+      <img src="./tubos.jpg" alt="Bobinas de aço" />
+      <h2>Aço<br>Produção</h2>
     </div>
-</main>
 
-{#if produtos.length > 0}
-<main>
-    <div id="title-main">
-        <p>Nossos produtos</p>
-        <h1>Produtos em Destaque</h1>
+    <div class="instagram-col">
+      <img src="./bobinas.jpg" alt="Tubos de aço" />
+      <h2>Siga nossa loja<br>No Instagram</h2>
     </div>
+  </section>
 
-    <div id="vitrine-padrão" class="vitrine">
-        {#each produtos.slice(0, 4) as produto (produto.id)}
-            <ProdutoContainer {...produto} />
-        {/each}
+  <section class="apresentacao-blog">
+    <p class="fkdaj">Nosso blog</p>
+    <h2 class="dargbjh">Leia nosso blog</h2>
+
+    <div class="blog-container">
+      {#each blog.slice(0, 3) as item (item.id)}
+        <BlogContainer {...item} />
+      {/each}
     </div>
-    {#if produtos.length > 4}
-        <button class="veja-mais" on:click={redirectToCatalog} id="padrao_button">Veja mais</button>
-    {/if}
+  </section>
+
+  <WppUp />
 </main>
-{/if}
-
-<main class="background-imgs-siga">
-    <div class="img-esquerda">
-        <h2>Aço<br>Produção</h2>
-        <img class="img-fundo" src="./660x348.jpg" alt="bobinas" style="left: 0;">
-    </div>
-
-    <div class="img-direita">
-        <h2>Siga nossa loja<br>No Instagram</h2>
-        <img class="img-fundo" src="./660x348-0.jpg" alt="tubos" style="right: 0;">
-    </div>
-</main>
-
-<main class="apresentacao-blog">
-  <p class="fkdaj">Nosso blog</p>
-  <h1 class="dargbjh">Leia nosso blog</h1>
-
-  <div class="blog-container">
-    {#each blog.slice(0, 3) as item (item.id)}
-      <BlogContainer {...item} />
-    {/each}
-  </div>
-</main>
-
-<WppUp />

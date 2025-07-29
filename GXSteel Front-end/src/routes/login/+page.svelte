@@ -1,3 +1,8 @@
+<svelte:head>
+  <title>Login | Plataforma de Vendas de Aço de Alta Qualidade</title>
+  <meta name="description" content="Acesse a plataforma de pedidos para compra de aço com procedência garantida, suporte técnico e entrega em todo o Brasil.">
+</svelte:head>
+
 <script>
     import { onMount } from "svelte";
 
@@ -5,7 +10,6 @@
     let password = "";
     let checked = false;
 
-    // Definindo a função login fora de onMount para ser acessível pelo clique
     async function login() {
         try {
             const res = await fetch(`${import.meta.env.VITE_API_URL}/api/login`, {
@@ -32,32 +36,27 @@
             console.error('Erro na requisição:', error);
         }
     }
-
-    // onMount não precisa ser usado para login, apenas para outras tarefas como carregamento de dados, etc.
-    onMount(() => {
-        // Aqui você pode usar onMount para outras lógicas iniciais, se necessário
-    });
 </script>
 
 <main>
     <div class="subheader">
-        <h1><strong>Login</strong></h1>
-        <p>Melhor site para a compra do seu aço</p>
+        <h1><strong>Área de Acesso – Distribuidor Oficial de Aço NISCO</strong></h1>
+        <p>Conecte-se e aproveite as melhores condições para adquirir aço de alta qualidade, com entrega rápida e garantia de procedência.</p>
     </div>
 
     <div class="login-container">
         <div class="form-container">
             <h1><strong>Login</strong></h1>
-            <p>Melhor site para a compra do seu aço</p>
+            <p>Solicite aço com rastreabilidade e suporte técnico direto.</p>
             <p>Novo cliente? <a href="/cadastro">Criar uma conta</a></p>
 
             <div class="input-group">
-                <label>Username</label>
+                <label for="username">Username</label>
                 <input bind:value={Username} type="text" placeholder="Username">
             </div>
 
             <div class="input-group">
-                <label>Password</label>
+                <label for="password">Password</label>
                 <input bind:value={password} type="password" placeholder="Password">
             </div>
 
@@ -69,8 +68,8 @@
             </div>
 
             <div class="forgot-links">
-                <a href="#">Esqueceu o nome de usuário?</a>
-                <a href="#">Esqueceu sua senha?</a>
+                <a href="/recuperarusuario">Esqueceu seu usuário?</a>
+                <a href="/recuperarsenha">Esqueceu sua senha?</a>
             </div>
         </div>
     </div>
@@ -94,7 +93,7 @@
 
     .subheader h1 {
         color: white;
-        font-size: 4rem;
+        font-size: 3rem;
         margin-bottom: 1rem;
     }
 

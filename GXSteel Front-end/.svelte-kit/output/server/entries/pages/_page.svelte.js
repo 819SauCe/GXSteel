@@ -61,33 +61,6 @@ function _page($$payload, $$props) {
   let vendas_mes = 100;
   let experiencia = 100;
   let membros = 100;
-  const equipeOriginal = [
-    {
-      nome: "BELLA MIKE",
-      cargo: "THE MANAGER",
-      foto: "./253x253-0.jpg"
-    },
-    {
-      nome: "HESSY KOWA",
-      cargo: "THE STAINLESSAÇO ER",
-      foto: "./253x253-1.jpg"
-    },
-    {
-      nome: "MICHEL BON",
-      cargo: "THE WORKER",
-      foto: "./253x253-2.jpg"
-    },
-    {
-      nome: "JHON SMITH",
-      cargo: "THE WORKER",
-      foto: "./253x253-3.jpg"
-    },
-    {
-      nome: "LUE ABELL",
-      cargo: "THE CEO",
-      foto: "./253x253.jpg"
-    }
-  ];
   let produtos = [];
   let blog = [
     {
@@ -118,21 +91,14 @@ function _page($$payload, $$props) {
       img: "./350x200.jpg"
     }
   ];
-  let equipe = [...equipeOriginal, ...equipeOriginal];
-  const each_array = ensure_array_like(equipe);
-  const each_array_2 = ensure_array_like(blog.slice(0, 3));
-  $$payload.out += `<main style="display: flex; gap: 1rem; margin-top: 5rem; justify-content: center;"><div style="position: relative; width: fit-content;"><img src="./570x420.jpg" alt="rolos"/> <div class="container-experiencia"><p style="font-size: 58px;"><strong>25</strong></p> <p>ANOS DE EXPERIÊNCIA</p></div> <img class="njkads" src="./275x200.jpg" alt="njkads"/></div> <div style="display: flex; flex-direction:column;gap:0px;"><p style="color: var(--button-background);">Sobre nós</p> <h1 style="font-size: 46px; font-weight: 700; line-height: 1;">Melhor aço,</h1> <h1 style="color: var(--button-background); font-size: 46px; font-weight: 700; line-height: 1;">SEM RISCOS</h1> <h4 style="font-size: 24px;margin-top: 25px;">Uma força global na produção e<br/> engenharia de aço.</h4> <p>Com expertise reconhecida, buscamos atender e superar as<br/> expectativas dos clientes em soluções metálicas industriais e<br/> ornamentais.</p> <button class="cotacao-btn">Veja mais</button></div></main> <main style="margin-top: 10rem;"><div style="display: flex;"><div><p style="color: var(--button-background); margin-left: 12rem;">Conheça nosso time</p> <h1 style="margin-left: 12rem;">NOSSA EQUIPE</h1></div> <div class="btn-prox-ant"><button class="botao-carrossel" aria-label="true"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button> <button class="botao-carrossel" aria-label="true"><span class="carousel-control-next-icon" aria-hidden="true"></span></button></div></div> <div class="equipe"><div class="carrossel-viewport"><div class="carrossel-container"><!--[-->`;
-  for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
-    let pessoa = each_array[$$index];
-    $$payload.out += `<div class="carrossel-item"><img${attr("src", pessoa.foto)}${attr("alt", pessoa.nome)}/> <div><p>${escape_html(pessoa.nome)}</p> <p>${escape_html(pessoa.cargo)}</p></div></div>`;
-  }
-  $$payload.out += `<!--]--></div></div></div></main> <main class="contact-button-and-img"><div class="container-contrate"><img src="./145x180.png" alt="bobina de aço"/> <h4>NOSSO AÇO É O MELHOR</h4> <button id="padrao_button" class="contrate-button" aria-label="true">Contrate agora</button></div></main> <main><div id="div-background" class="divisoria-data"><img id="img-background" class="img-background-class" src="./HP1.-bg.jpg" alt="backround-img"/> <div class="dados"><div style="width: 100%;"><p style="color: var(--background-orange); font-size: 2rem; font-weight: 600;">${escape_html(vendas_mes)}+</p> <p style="color: white; font-size: 1.3rem; font-weight: 600;">Vendas Completas por Mês</p></div> <div style="width: 100%;"><p style="color: var(--background-orange); font-size: 2rem; font-weight: 600;">${escape_html(experiencia)}+</p> <p style="color: white; font-size: 1.3rem; font-weight: 600;">Anos de experiência prática</p></div> <div style="width: 100%;"><p style="color: var(--background-orange); font-size: 2rem; font-weight: 600;">${escape_html(membros)}</p> <p style="color: white; font-size: 1.3rem; font-weight: 600;">Membros da equipe incríveis</p></div></div></div></main> `;
+  const each_array_1 = ensure_array_like(blog.slice(0, 3));
+  $$payload.out += `<section class="sobre-nos-section"><div class="sobre-nos-container"><div class="sobre-nos-imagem"><img src="./570x420.jpg" alt="rolos de aço"/> <div class="container-experiencia"><p class="anos-numero"><strong>25</strong></p> <p>ANOS DE EXPERIÊNCIA</p></div> <img class="njkads" src="./275x200.jpg" alt="linha de produção"/></div> <div class="sobre-nos-texto"><p class="subtitulo">Sobre nós</p> <h1 class="titulo">Melhor aço,<br/><span class="destaque">SEM RISCOS</span></h1> <h4 class="descricao-curta">Uma força global na produção e engenharia de aço.</h4> <p class="descricao">Com expertise reconhecida, buscamos atender e superar as expectativas dos clientes em soluções metálicas industriais e ornamentais.</p> <button class="cotacao-btn">Veja mais</button></div></div></section> <section class="ceo-section"><div class="ceo-content" style="margin-top: 3rem;"><div class="ceo-texto"><p class="ceo-intro">Liderança estratégica</p> <h1 class="ceo-titulo">Conheça nosso CEO</h1> <p class="ceo-descricao">À frente da nossa operação, <strong>Roberto Bertolossi</strong> conduz a equipe com foco em inovação, excelência logística e atendimento técnico de alto padrão. Sua gestão impulsiona a entrega de soluções em aço com rastreabilidade, desempenho e compromisso total com o cliente.</p></div> <img src="roberto.png" alt="Roberto Bertolossi - CEO" class="ceo-foto"/></div></section> <section class="contact-button-and-img"><div class="container-contrate"><img src="./145x180.png" alt="bobina de aço"/> <h4>Qualidade Certificada, Resultado Garantido</h4> <button id="padrao_button" class="contrate-button" aria-label="true">Contrate agora</button></div></section> <section><div id="div-background" class="divisoria-data"><img id="img-background" class="img-background-class" src="./HP1.-bg.jpg" alt="backround-img"/> <div class="dados"><div style="width: 100%;"><p class="text1">${escape_html(vendas_mes)}+</p> <p class="text" style="color: white; font-weight: 600;">Vendas Completas por Mês</p></div> <div style="width: 100%;"><p class="text1">${escape_html(experiencia)}+</p> <p class="text" style="color: white; font-weight: 600;">Anos de experiência prática</p></div> <div style="width: 100%;"><p class="text1">${escape_html(membros)}</p> <p class="text" style="color: white; font-weight: 600;">Membros da equipe incríveis</p></div></div></div></section> `;
   if (produtos.length > 0) {
     $$payload.out += "<!--[-->";
-    const each_array_1 = ensure_array_like(produtos.slice(0, 4));
-    $$payload.out += `<main><div id="title-main"><p>Nossos produtos</p> <h1>Produtos em Destaque</h1></div> <div id="vitrine-padrão" class="vitrine"><!--[-->`;
-    for (let $$index_1 = 0, $$length = each_array_1.length; $$index_1 < $$length; $$index_1++) {
-      let produto = each_array_1[$$index_1];
+    const each_array = ensure_array_like(produtos.slice(0, 4));
+    $$payload.out += `<section><div id="title-main"><p>Nossos produtos</p> <h1>Produtos em Destaque</h1></div> <div id="vitrine-padrão" class="vitrine"><!--[-->`;
+    for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
+      let produto = each_array[$$index];
       Produto_container($$payload, spread_props([produto]));
     }
     $$payload.out += `<!--]--></div> `;
@@ -142,16 +108,16 @@ function _page($$payload, $$props) {
     } else {
       $$payload.out += "<!--[!-->";
     }
-    $$payload.out += `<!--]--></main>`;
+    $$payload.out += `<!--]--></section>`;
   } else {
     $$payload.out += "<!--[!-->";
   }
-  $$payload.out += `<!--]--> <main class="background-imgs-siga"><div class="img-esquerda"><h2>Aço<br/>Produção</h2> <img class="img-fundo" src="./660x348.jpg" alt="bobinas" style="left: 0;"/></div> <div class="img-direita"><h2>Siga nossa loja<br/>No Instagram</h2> <img class="img-fundo" src="./660x348-0.jpg" alt="tubos" style="right: 0;"/></div></main> <main class="apresentacao-blog"><p class="fkdaj">Nosso blog</p> <h1 class="dargbjh">Leia nosso blog</h1> <div class="blog-container"><!--[-->`;
-  for (let $$index_2 = 0, $$length = each_array_2.length; $$index_2 < $$length; $$index_2++) {
-    let item = each_array_2[$$index_2];
+  $$payload.out += `<!--]--> <section class="instagram-acos-section"><div class="instagram-col"><img src="./tubos.jpg" alt="Bobinas de aço"/> <h2>Aço<br/>Produção</h2></div> <div class="instagram-col"><img src="./bobinas.jpg" alt="Tubos de aço"/> <h2>Siga nossa loja<br/>No Instagram</h2></div></section> <section class="apresentacao-blog"><p class="fkdaj">Nosso blog</p> <h1 class="dargbjh">Leia nosso blog</h1> <div class="blog-container"><!--[-->`;
+  for (let $$index_1 = 0, $$length = each_array_1.length; $$index_1 < $$length; $$index_1++) {
+    let item = each_array_1[$$index_1];
     Blog_container($$payload, spread_props([item]));
   }
-  $$payload.out += `<!--]--></div></main> `;
+  $$payload.out += `<!--]--></div></section> `;
   Wpp_up($$payload);
   $$payload.out += `<!---->`;
   pop();
