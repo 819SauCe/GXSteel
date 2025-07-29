@@ -1,4 +1,4 @@
-import { V as head } from "../../../chunks/index.js";
+import { F as head } from "../../../chunks/index.js";
 import { L as Loading } from "../../../chunks/loading.js";
 function _page($$payload) {
   head($$payload, ($$payload2) => {

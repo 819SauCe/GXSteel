@@ -1,4 +1,4 @@
-import { P as ensure_array_like, E as attr, M as escape_html, J as bind_props, D as pop, z as push, Q as spread_props } from "../../chunks/index.js";
+import { Q as ensure_array_like, E as attr, N as escape_html, K as bind_props, D as pop, z as push, F as head, R as spread_props } from "../../chunks/index.js";
 /* empty css               */
 function Produto_container($$payload, $$props) {
   push();
@@ -92,11 +92,15 @@ function _page($$payload, $$props) {
     }
   ];
   const each_array_1 = ensure_array_like(blog.slice(0, 3));
-  $$payload.out += `<section class="sobre-nos-section"><div class="sobre-nos-container"><div class="sobre-nos-imagem"><img src="./570x420.jpg" alt="rolos de aço"/> <div class="container-experiencia"><p class="anos-numero"><strong>25</strong></p> <p>ANOS DE EXPERIÊNCIA</p></div> <img class="njkads" src="./275x200.jpg" alt="linha de produção"/></div> <div class="sobre-nos-texto"><p class="subtitulo">Sobre nós</p> <h1 class="titulo">Melhor aço,<br/><span class="destaque">SEM RISCOS</span></h1> <h4 class="descricao-curta">Uma força global na produção e engenharia de aço.</h4> <p class="descricao">Com expertise reconhecida, buscamos atender e superar as expectativas dos clientes em soluções metálicas industriais e ornamentais.</p> <button class="cotacao-btn">Veja mais</button></div></div></section> <section class="ceo-section"><div class="ceo-content" style="margin-top: 3rem;"><div class="ceo-texto"><p class="ceo-intro">Liderança estratégica</p> <h1 class="ceo-titulo">Conheça nosso CEO</h1> <p class="ceo-descricao">À frente da nossa operação, <strong>Roberto Bertolossi</strong> conduz a equipe com foco em inovação, excelência logística e atendimento técnico de alto padrão. Sua gestão impulsiona a entrega de soluções em aço com rastreabilidade, desempenho e compromisso total com o cliente.</p></div> <img src="roberto.png" alt="Roberto Bertolossi - CEO" class="ceo-foto"/></div></section> <section class="contact-button-and-img"><div class="container-contrate"><img src="./145x180.png" alt="bobina de aço"/> <h4>Qualidade Certificada, Resultado Garantido</h4> <button id="padrao_button" class="contrate-button" aria-label="true">Contrate agora</button></div></section> <section><div id="div-background" class="divisoria-data"><img id="img-background" class="img-background-class" src="./HP1.-bg.jpg" alt="backround-img"/> <div class="dados"><div style="width: 100%;"><p class="text1">${escape_html(vendas_mes)}+</p> <p class="text" style="color: white; font-weight: 600;">Vendas Completas por Mês</p></div> <div style="width: 100%;"><p class="text1">${escape_html(experiencia)}+</p> <p class="text" style="color: white; font-weight: 600;">Anos de experiência prática</p></div> <div style="width: 100%;"><p class="text1">${escape_html(membros)}</p> <p class="text" style="color: white; font-weight: 600;">Membros da equipe incríveis</p></div></div></div></section> `;
+  head($$payload, ($$payload2) => {
+    $$payload2.title = `<title>Aço de Alta Qualidade | Soluções Industriais, Produtos e Engenharia – GXSteel</title>`;
+    $$payload2.out += `<meta name="description" content="GXSteel - Soluções Industriais, Produtos e Engenharia - Acesso aos melhores produtos de aço de alta qualidade."/>`;
+  });
+  $$payload.out += `<main><section class="sobre-nos-section"><div class="sobre-nos-container"><div class="sobre-nos-imagem"><img src="./570x420.jpg" alt="rolos de aço"/> <div class="container-experiencia"><p class="anos-numero"><strong>25</strong></p> <p>ANOS DE EXPERIÊNCIA</p></div> <img class="njkads" src="./275x200.jpg" alt="linha de produção"/></div> <div class="sobre-nos-texto"><p class="subtitulo">Sobre nós</p> <h1 class="titulo">Melhor aço,<br/><span class="destaque">SEM RISCOS</span></h1> <h4 class="descricao-curta">Uma força global na produção e engenharia de aço.</h4> <p class="descricao">Com expertise reconhecida, buscamos atender e superar as expectativas dos clientes em soluções metálicas industriais e ornamentais.</p> <button class="cotacao-btn">Veja mais</button></div></div></section> <section class="ceo-section"><div class="ceo-content" style="margin-top: 3rem;"><div class="ceo-texto"><p class="ceo-intro">Liderança estratégica</p> <h2 class="ceo-titulo">Conheça nosso CEO</h2> <p class="ceo-descricao">À frente da nossa operação, <strong>Roberto Bertolossi</strong> conduz a equipe com foco em inovação, excelência logística e atendimento técnico de alto padrão. Sua gestão impulsiona a entrega de soluções em aço com rastreabilidade, desempenho e compromisso total com o cliente.</p></div> <img src="roberto.png" alt="Roberto Bertolossi - CEO" class="ceo-foto"/></div></section> <section class="contact-button-and-img"><div class="container-contrate"><img src="./145x180.png" alt="bobina de aço"/> <h4>Qualidade Certificada, Resultado Garantido</h4> <button id="padrao_button" class="contrate-button" aria-label="true">Compre agora</button></div></section> <section><div id="div-background" class="divisoria-data"><img id="img-background" class="img-background-class" src="./HP1.-bg.jpg" alt="backround-img"/> <div class="dados"><div style="width: 100%;"><p class="text1">${escape_html(vendas_mes)}+</p> <p class="text" style="color: white; font-weight: 600;">Vendas Completas por Mês</p></div> <div style="width: 100%;"><p class="text1">${escape_html(experiencia)}+</p> <p class="text" style="color: white; font-weight: 600;">Anos de experiência prática</p></div> <div style="width: 100%;"><p class="text1">${escape_html(membros)}</p> <p class="text" style="color: white; font-weight: 600;">Membros da equipe incríveis</p></div></div></div></section> `;
   if (produtos.length > 0) {
     $$payload.out += "<!--[-->";
     const each_array = ensure_array_like(produtos.slice(0, 4));
-    $$payload.out += `<section><div id="title-main"><p>Nossos produtos</p> <h1>Produtos em Destaque</h1></div> <div id="vitrine-padrão" class="vitrine"><!--[-->`;
+    $$payload.out += `<section><div id="title-main"><p>Nossos produtos</p> <h2>Produtos em Destaque</h2></div> <div id="vitrine-padrão" class="vitrine"><!--[-->`;
     for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
       let produto = each_array[$$index];
       Produto_container($$payload, spread_props([produto]));
@@ -112,14 +116,14 @@ function _page($$payload, $$props) {
   } else {
     $$payload.out += "<!--[!-->";
   }
-  $$payload.out += `<!--]--> <section class="instagram-acos-section"><div class="instagram-col"><img src="./tubos.jpg" alt="Bobinas de aço"/> <h2>Aço<br/>Produção</h2></div> <div class="instagram-col"><img src="./bobinas.jpg" alt="Tubos de aço"/> <h2>Siga nossa loja<br/>No Instagram</h2></div></section> <section class="apresentacao-blog"><p class="fkdaj">Nosso blog</p> <h1 class="dargbjh">Leia nosso blog</h1> <div class="blog-container"><!--[-->`;
+  $$payload.out += `<!--]--> <section class="instagram-acos-section"><div class="instagram-col"><img src="./tubos.jpg" alt="Bobinas de aço"/> <h2>Aço<br/>Produção</h2></div> <div class="instagram-col"><img src="./bobinas.jpg" alt="Tubos de aço"/> <h2>Siga nossa loja<br/>No Instagram</h2></div></section> <section class="apresentacao-blog"><p class="fkdaj">Nosso blog</p> <h2 class="dargbjh">Leia nosso blog</h2> <div class="blog-container"><!--[-->`;
   for (let $$index_1 = 0, $$length = each_array_1.length; $$index_1 < $$length; $$index_1++) {
     let item = each_array_1[$$index_1];
     Blog_container($$payload, spread_props([item]));
   }
   $$payload.out += `<!--]--></div></section> `;
   Wpp_up($$payload);
-  $$payload.out += `<!---->`;
+  $$payload.out += `<!----></main>`;
   pop();
 }
 export {

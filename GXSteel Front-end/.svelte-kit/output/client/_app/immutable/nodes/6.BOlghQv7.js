@@ -1,1 +1,0 @@
-import"../chunks/CWj6FrbW.js";import"../chunks/69_IOA4Y.js";import{h as a}from"../chunks/BcA1OQnx.js";import{o as m,q as e}from"../chunks/DCQCXGH4.js";import{L as p}from"../chunks/CAPLzrPM.js";var i=m('<meta http-equiv="refresh" content="0;url=/catalogo"/>');function d(o){a(t=>{var r=i();e(t,r)}),p(o)}export{d as component};

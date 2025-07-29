@@ -48,3 +48,58 @@ jobs:
         run: |
           cd "GXSteel Back-end"
           npm test
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Deploy Front-end
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: 15022
+          source: "GXSteel Front-end/build/"
+          target: "/var/www/html/gxsteel/"
+
+      - name: Deploy Back-end (sem .env)
+        run: |
+          tar --exclude='.env' -czf backend.tar.gz -C "GXSteel Back-end" .
+        shell: bash
+
+      - name: Copiar Back-end pro servidor
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: 15022
+          source: "backend.tar.gz"
+          target: "/tmp/backend.tar.gz"
+
+      - name: Extrair e substituir Back-end no servidor (sem .env)
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: 15022
+          script: |
+            cd /opt/gxsteel-backend
+            find . -type f ! -name '.env' -delete
+            tar -xzf /tmp/backend.tar.gz -C .
+            rm /tmp/backend.tar.gz
+
+      - name: Reiniciar container docker do back-end
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: 15022
+          script: |
+            docker restart gxsteel-backend
