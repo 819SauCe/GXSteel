@@ -28,7 +28,7 @@ function waitForServer(timeout = 30000, intervalMs = 500) {
           return resolve();
         }
       } catch (error) {
-        // Aguardando nova tentativa
+
       }
 
       if (Date.now() - start > timeout) {
