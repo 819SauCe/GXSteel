@@ -57,6 +57,7 @@ userSchema = new mongoose.Schema({
 });
 
 const productSchema = new mongoose.Schema({
+    sku: String,
     name: String,
     description: String,
     old_price: Number,
@@ -144,8 +145,8 @@ app.post('/api/login', async (req, res) => {
 });
 
 app.post('/api/insert_product', async (req, res) => {
-    const { name, description, old_price, price, category, image, stock, isActive, comments } = req.body;
-    if (!name || !description || !old_price || !price || !category || !image || !stock) {
+    const { sku, name, description, old_price, price, category, image, stock, isActive, comments } = req.body;
+    if (!sku || !name || !description || !old_price || !price || !category || !image || !stock) {
     return res.status(400).send({ message: "Todos os campos são obrigatórios" });}
     const exists = await Product.findOne({ name });
     if (exists) return res.status(409).send({ message: 'Produto já existe', success: false });

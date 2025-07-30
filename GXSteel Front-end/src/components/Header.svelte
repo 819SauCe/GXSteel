@@ -131,7 +131,7 @@
     <div class="menu-links">
       <div class="dropdown">
         <a href="/" role="button" tabindex="0" on:mousedown|preventDefault on:click={() => (window.location.href = "/")} class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 0.9rem;">
-          <strong>Home</strong>
+          <strong>HOME</strong>
         </a>
 
         <!--

@@ -36,7 +36,6 @@
       });
 
       const data = await response.json();
-      console.log(data);
   }
 
   async function toggleLike() {
@@ -68,7 +67,6 @@
       q_ratings = Object.keys(ratings).length;
       thumbnails = Array.isArray(data.image) ? [...data.image] : [];
       reviews = Array.isArray(data.comments) ? [...data.comments] : [];
-
       try {
           const userRes = await fetch(`${import.meta.env.VITE_API_URL}/api/protected`, {
               credentials: 'include'
@@ -99,7 +97,7 @@
 
 		<div class="col-md-6">
 			<h2 class="mb-3">{produto.name}</h2>
-			<p class="text-muted mb-4">SKU: {produto._id}</p>
+			<p class="text-muted mb-4">SKU: {produto.sku}</p>
       
       <!--
 			<div class="mb-3">
@@ -214,8 +212,6 @@
   {/if}
 </section>
 -->
-
-
 
 <style>
     .product-image {
