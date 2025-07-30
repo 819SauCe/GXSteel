@@ -1235,14 +1235,9 @@ function attr(name, value, is_boolean = false) {
   const assignment = is_boolean ? "" : `="${escape_html(normalized, true)}"`;
   return ` ${name}${assignment}`;
 }
-function clsx(value) {
-  {
-    return value ?? "";
-  }
-}
 function to_class(value, hash, directives) {
   var classname = value == null ? "" : "" + value;
-  if (hash) {
+  {
     classname = classname ? classname + " " + hash : hash;
   }
   return classname === "" ? null : classname;
@@ -1456,7 +1451,6 @@ export {
   spread_props as R,
   stringify as S,
   attr_class as T,
-  clsx as U,
   set_active_effect as a,
   active_effect as b,
   active_reaction as c,
