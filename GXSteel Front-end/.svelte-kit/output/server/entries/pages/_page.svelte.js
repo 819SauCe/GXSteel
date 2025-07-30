@@ -15,7 +15,7 @@ function Produto_container($$payload, $$props) {
     each_array[$$index];
     $$payload.out += `<div class="text-warning fs-5" style="display: flex;">★</div>`;
   }
-  $$payload.out += `<!--]--></div> <h5 class="fw-bold">${escape_html(titulo)}</h5> <p class="text-muted mb-2 descricao-limitada svelte-obz7ui">${escape_html(descricao)}</p> <div class="d-flex align-items-center justify-content-between"><div><span class="fw-bold text-danger fs-5">R$${escape_html(preco)}</span> <span class="text-decoration-line-through text-muted ms-2">R$${escape_html(precoOriginal)}</span></div> <button class="btn btn-orange text-white fw-bold svelte-obz7ui">Adicionar Ao Carrinho</button></div></div>`;
+  $$payload.out += `<!--]--></div> <h5 class="fw-bold">${escape_html(titulo)}</h5> <p class="text-muted mb-2 descricao-limitada svelte-obz7ui">${escape_html(descricao)}</p> <div class="d-flex align-items-center justify-content-between"><button class="btn btn-orange text-white fw-bold svelte-obz7ui">Pedir agora</button></div></div>`;
   bind_props($$props, {
     id,
     preco,
@@ -100,7 +100,7 @@ function _page($$payload, $$props) {
   if (produtos.length > 0) {
     $$payload.out += "<!--[-->";
     const each_array = ensure_array_like(produtos.slice(0, 4));
-    $$payload.out += `<section><div id="title-main"><p>Nossos produtos</p> <h2>Produtos em Destaque</h2></div> <div id="vitrine-padrão" class="vitrine"><!--[-->`;
+    $$payload.out += `<section><div id="title-main"><p style="margin-top: 3rem;">Nossos produtos</p> <h2 style="margin-left: 12rem;">Produtos em Destaque</h2></div> <div id="vitrine-padrão" class="vitrine"><!--[-->`;
     for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
       let produto = each_array[$$index];
       Produto_container($$payload, spread_props([produto]));
@@ -108,7 +108,7 @@ function _page($$payload, $$props) {
     $$payload.out += `<!--]--></div> `;
     if (produtos.length > 4) {
       $$payload.out += "<!--[-->";
-      $$payload.out += `<button class="veja-mais" id="padrao_button">Veja mais</button>`;
+      $$payload.out += `<button class="veja-mais" id="padrao_button" style="margin-bottom: 3rem;">Veja mais</button>`;
     } else {
       $$payload.out += "<!--[!-->";
     }

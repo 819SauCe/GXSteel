@@ -27,40 +27,35 @@
     location.href = "/catalogo"
   }
 
-  onMount(() => {
-    if (itemContainer.scrollLeft === 0) {
+  onMount(async () => {
+    if (itemContainer && itemContainer.scrollLeft === 0) {
       itemContainer.scrollLeft = 0;
     }
 
     const interval = setInterval(async () => {
-        if (vendas_mes > 0) vendas_mes--;
-        if (experiencia > 0) experiencia--;
-        if (membros > 3) membros--;
-        await tick();
-
-        if (vendas_mes <= 0 && experiencia <= 0 && membros <= 3) {
-            clearInterval(interval);
-        }
-        });
-  });
-
-    onMount(async () => {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/products?page=1&limit=20&isActive=true`);
-      const data = await res.json();
-      produtos = data.map(p => ({
-        id: p._id,
-        preco: p.price,
-        precoOriginal: p.old_price,
-        titulo: p.name,
-        descricao: p.description,
-        stars: p.ratings?.length || 0,
-        liked: p.liked || 0,
-        sells: p.sells || 0,
-        filtro: p.category || '',
-        imagem: p.image || '',
-        category: p.category
-      }));
+      if (vendas_mes > 0) vendas_mes--;
+      if (experiencia > 0) experiencia--;
+      if (membros > 3) membros--;
+      await tick();
+      if (vendas_mes <= 0 && experiencia <= 0 && membros <= 3) clearInterval(interval);
     });
+
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/products?page=1&limit=20&isActive=true`);
+    const data = await res.json();
+    produtos = data.map(p => ({
+      id: p._id,
+      preco: p.price,
+      precoOriginal: p.old_price,
+      titulo: p.name,
+      descricao: p.description,
+      stars: p.ratings?.length || 0,
+      liked: p.liked || 0,
+      sells: p.sells || 0,
+      filtro: p.category || '',
+      imagem: Array.isArray(p.image) ? p.image : [],
+      category: p.category
+    }));
+  });
 </script>
 
 <svelte:head>
@@ -137,8 +132,8 @@
   {#if produtos.length > 0}
   <section>
       <div id="title-main">
-          <p>Nossos produtos</p>
-          <h2>Produtos em Destaque</h2>
+          <p style="margin-top: 3rem;">Nossos produtos</p>
+          <h2 style="margin-left: 12rem;">Produtos em Destaque</h2>
       </div>
 
       <div id="vitrine-padrão" class="vitrine">
@@ -147,7 +142,7 @@
           {/each}
       </div>
       {#if produtos.length > 4}
-          <button class="veja-mais" on:click={redirectToCatalog} id="padrao_button">Veja mais</button>
+          <button class="veja-mais" on:click={redirectToCatalog} id="padrao_button" style="margin-bottom: 3rem;">Veja mais</button>
       {/if}
   </section>
   {/if}

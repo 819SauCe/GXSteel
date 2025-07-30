@@ -59,7 +59,6 @@
     }
 }
 
-
     onMount(async () => {
       const res = await fetch(`${import.meta.env.VITE_API_URL}/api/product/${id}`);
       const data = await res.json();
@@ -101,10 +100,14 @@
 		<div class="col-md-6">
 			<h2 class="mb-3">{produto.name}</h2>
 			<p class="text-muted mb-4">SKU: {produto._id}</p>
+      
+      <!--
 			<div class="mb-3">
 				<span class="h4 me-2">${produto.price}</span>
 				<span class="text-muted"><s>${produto.old_price}</s></span>
 			</div>
+      -->
+
 			<div class="mb-3">
                 <i class="bi bi-star-fill text-warning"></i>
                 <i class="bi bi-star-fill text-warning"></i>
@@ -114,17 +117,14 @@
                 <span class="ms-2">4.5 ({q_ratings} reviews)</span>
             </div>
 			<p class="mb-4">{produto.description}</p>
+
+      <!--
 			<div class="mb-4">
 				<label for="quantity" class="form-label">Quantidade:</label>
-				<input
-					type="number"
-					class="form-control"
-					id="quantity"
-					bind:value={quantity}
-					min="1"
-					style="width: 80px"
-				/>
+				<input type="number" class="form-control" id="quantity" bind:value={quantity} min="1" style="width: 80px"/>
 			</div>
+      -->
+
 			<button on:click={directToWpp} class="btn btn-primary btn-lg mb-3 me-2">
         <!--<i class="bi bi-cart-plus"></i>-->
 				 Peça agora!
@@ -146,6 +146,7 @@
 	</div>
 </div>
 
+<!--
 <section class="container py-5">
   <h2 class="mb-4">Avaliações</h2>
 
@@ -158,7 +159,6 @@
   <span class="ms-2">4.5 ({q_ratings} reviews)</span>
 </div>
 
-
   <div class="card shadow-sm mb-4">
     <div class="card-body">
       <h5 class="card-title">Escreva uma avaliação</h5>
@@ -167,15 +167,7 @@
           <label for="rating" class="form-label">Avaliação</label>
           <div class="mb-3 d-flex align-items-center">
             {#each Array(5) as _, i}
-                <i
-                class="bi fs-4 me-1"
-                class:bi-star-fill={i < rating}
-                class:bi-star={i >= rating}
-                class:text-warning={i < rating}
-                class:text-muted={i >= rating}
-                on:click={() => rating = i + 1}
-                style="cursor: pointer;"
-                ></i>
+                <i class="bi fs-4 me-1" class:bi-star-fill={i < rating} class:bi-star={i >= rating} class:text-warning={i < rating} class:text-muted={i >= rating} on:click={() => rating = i + 1} style="cursor: pointer;"></i>
             {/each}
             <span class="ms-2">{rating} estrela(s)</span>
             </div>
@@ -221,6 +213,8 @@
     {/each}
   {/if}
 </section>
+-->
+
 
 
 <style>

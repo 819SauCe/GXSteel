@@ -24,11 +24,15 @@
   <h5 class="fw-bold">{titulo}</h5>
   <p class="text-muted mb-2 descricao-limitada">{descricao}</p>
   <div class="d-flex align-items-center justify-content-between">
+
+    <!--
     <div>
       <span class="fw-bold text-danger fs-5">R${preco}</span>
       <span class="text-decoration-line-through text-muted ms-2">R${precoOriginal}</span>
     </div>
-    <button on:click={redirect} class="btn btn-orange text-white fw-bold">Adicionar Ao Carrinho</button>
+    -->
+
+    <button on:click={redirect} class="btn btn-orange text-white fw-bold">Pedir agora</button>
   </div>
 </div>
 

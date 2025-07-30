@@ -75,6 +75,7 @@
 <hr />
 
 <main>
+    <!--
     <aside class="filtro">
         <h2>Filtros</h2>
 
@@ -113,6 +114,7 @@
             </select>
         </div>
     </aside>
+    -->
 
     <div class="vitrine">
         {#each produtosFiltrados as product}
@@ -205,6 +207,7 @@
         flex-wrap: wrap;
         gap: 2rem;
         justify-content: center;
+        margin: 0 auto;
         max-width: 1200px;
     }
 </style>

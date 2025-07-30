@@ -12,9 +12,20 @@ const PORT = process.env.PORT || 3000;
 const JWT_SECRET = process.env.JWT_SECRET;
 const MONGODB_URI = process.env.MONGODB_URI;
 const CORS_ORIGIN = process.env.CORS_ORIGIN;
+console.log(`CORS_ORIGIN: ${CORS_ORIGIN}`);
+const allowedOrigins = process.env.CORS_ORIGIN.split(',').map(origin => origin.trim());
 
 app.use(cookieParser());
-app.use(cors({origin: process.env.CORS_ORIGIN.split(',').map(origin => origin.trim())}));
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
 app.use(express.json())
 
 mongoose.connect(MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true})
@@ -299,5 +310,5 @@ app.get('/api/favorites', authMiddleware, async (req, res) => {
 });
 
 app.listen(process.env.PORT, '0.0.0.0', () => {
-  console.log(`Server running on http://0.0.0.0:${process.env.PORT}`);
+  console.log(`Server running on https://0.0.0.0:${process.env.PORT}`);
 });
