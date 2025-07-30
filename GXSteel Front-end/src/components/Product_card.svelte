@@ -109,26 +109,36 @@
         <p class="card-text" style="font-size: 0.95rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
             {product.descricao}
         </p>
-        <p class="card-text mb-1">
+       <!-- <p class="card-text mb-1">
             <span class="text-danger fw-bold">R$ {product.preco}</span>
             {#if product.precoOriginal}
                 <span class="text-muted text-decoration-line-through ms-2">R$ {product.precoOriginal}</span>
             {/if}
+            
         </p>
+        -->
+
+        <!--
         <p class="mb-2 d-flex align-items-center">
             {#each Array(Number(product.stars)).fill(0) as _, i}
                 <i class="bi bi-star-fill text-warning me-1"></i>
             {/each}
             <span class="text-muted ms-1">({product.stars})</span>
         </p>
+        -->
+
+    
         <div class="d-flex justify-content-between align-items-center">
-            <a href="/produto/{product.id}" class="btn btn-primary">Comprar</a>
+            <a href="/produto/{product.id}" class="btn btn-primary">Adquira agora</a>
+
+            <!--
             <div class="d-flex align-items-center">
                 <button class="like-btn" on:click={likeProduct} aria-label="true">
                     <i class={liked ? "bi bi-heart-fill" : "bi bi-heart"}></i>
                 </button>
                 <span class="text-muted ms-2">({product.liked})</span>
             </div>
+            -->
         </div>
     </div>
 </div>

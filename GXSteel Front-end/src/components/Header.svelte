@@ -127,24 +127,10 @@
 
   <hr style="margin-left: 12rem; margin-right: 12rem; height: 1px;" />
 
-  <div style="display: flex; gap: 30rem; align-items: center;">
-    <div
-      style="display: flex; margin-left: 12rem; margin-top: 1rem; margin-bottom: 1rem; gap: 2.5rem;"
-    >
+  <div class="menu-wrapper">
+    <div class="menu-links">
       <div class="dropdown">
-        <a
-          href="/"
-          role="button"
-          tabindex="0"
-          on:mousedown|preventDefault
-          on:click={() => (window.location.href = "/")}
-          class="btn btn-secondary dropdown-toggle"
-          id="dropdownMenuButton"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-          style="font-size: 0.9rem;"
-        >
+        <a href="/" role="button" tabindex="0" on:mousedown|preventDefault on:click={() => (window.location.href = "/")} class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 0.9rem;">
           <strong>PÁGINAS INICIAIS</strong>
         </a>
 
@@ -206,8 +192,9 @@
         </svg>
       </button>
     </div>
+    -->
   </div>
-  -->
+
 </header>
 
 <style>
@@ -359,6 +346,35 @@
   .search-button:hover svg {
     fill: white;
   }
+
+.menu-wrapper {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.menu-links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 12rem;
+}
+
+@media (max-width: 900px) {
+  .menu-links {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+    margin-left: -1rem;
+  }
+}
 
   @media (max-width: 768px) {
     .super-header,
